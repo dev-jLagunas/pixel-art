@@ -1,0 +1,218 @@
+/***************************************************
+  CSS Reset
+****************************************************/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/***************************************************
+  Variables
+****************************************************/
+//colors
+$color-salmon: salmon;
+$color-teal: teal;
+$color-white: white;
+$color-black: #000;
+$color-grey: #ddd;
+
+//font
+$font-kode-mono: "Kode Mono";
+
+//border
+$border-radius-large: 1rem;
+$border-radius-small: 5px;
+
+/***************************************************
+  Global Styles
+****************************************************/
+body {
+  height: 100vh;
+  background-color: $color-salmon;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  font-family: $font-kode-mono;
+}
+
+/***************************************************
+  Project Styles
+****************************************************/
+
+.main-wrapper {
+  background-color: $color-teal;
+  width: 90vmin;
+  height: max-content;
+  border-radius: $border-radius-large;
+  padding-block: 2rem;
+  transition: 0.6s ease-out;
+  margin-top: -2rem;
+  text-align: center;
+}
+
+.img-wrapper {
+  width: 130px;
+  animation: sway 10s infinite ease-in-out;
+}
+
+@keyframes sway {
+  0% {
+    transform: translateX(30px);
+  }
+  50% {
+    transform: translateX(-30px);
+  }
+  100% {
+    transform: translateX(30px);
+  }
+}
+
+.pixel-img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.options-wrapper {
+  display: flex;
+  justify-content: space-around;
+  padding-inline: 1rem;
+}
+
+label {
+  display: block;
+  text-align: center;
+  color: $color-white;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-top: 1rem;
+}
+
+.slider {
+  position: relative;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  background-color: $color-white;
+  border-radius: 5px;
+  height: 5px;
+  width: 100%;
+}
+
+span {
+  position: absolute;
+  top: -30px;
+  right: 52px;
+  color: $color-salmon;
+  font-size: 2rem;
+}
+
+.btns-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.btnA-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.btnB-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+button {
+  padding: 0.3rem 1rem;
+  border: 2px solid $color-salmon;
+  background: transparent;
+  color: $color-white;
+  font-family: $font-kode-mono;
+  border-radius: 5px;
+}
+
+#erase-btn.true,
+#paint-btn.true {
+  background-color: $color-salmon;
+}
+
+input[type="color"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border-radius: 50%;
+  border: 4px solid $color-white;
+}
+
+input[type="color"]::-moz-color-swatch {
+  border-radius: 8px;
+  border: 4px solid $color-black;
+}
+
+.grid-container {
+  width: max-content;
+  margin-inline: auto;
+  margin-top: 2rem;
+}
+
+.gridCol {
+  height: 1em;
+  width: 1em;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.gridRow {
+  display: flex;
+}
+
+#screenshot-btn {
+  margin-top: 1rem;
+  width: max-content;
+}
+
+#screenshot-btn:hover {
+  cursor: pointer;
+}
+
+.title {
+  color: white;
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/***************************************************
+  Project Styles
+****************************************************/
+
+@media only screen and (max-width: 768px) {
+  .main-wrapper {
+    overflow: hidden;
+  }
+
+  .gridCol {
+    height: 0.7em;
+    width: 0.7em;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}

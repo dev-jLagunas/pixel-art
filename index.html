@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="A pixel art generator made with scss, vanilla javascript, and vite as the build tool."
+    />
+    <meta
+      name="keywords"
+      content="HTML, scss, vanilla javascript, pixel art, draw"
+    />
+    <meta name="author" content="Juan Lagunas" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- Title -->
+    <title>Pixel Art Generator</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <figure class="img-wrapper">
+      <img src="public/pixel-ufo.png" alt="pixel art" class="pixel-img" />
+    </figure>
+    <main class="main-wrapper">
+      <!-- Grid Create/Add/Erase/Paint Options -->
+      <section class="display-options">
+        <!-- Grid Range Sliders -->
+        <div class="options-wrapper">
+          <div class="slider">
+            <label for="width-range">Grid Width</label>
+            <input type="range" id="width-range" min="1" max="35" />
+            <span id="width-value">00</span>
+          </div>
+          <div class="slider">
+            <label for="height-range">Grid Height</label>
+            <input type="range" id="height-range" min="1" max="35" />
+            <span id="height-value">00</span>
+          </div>
+        </div>
+
+        <!-- Grid Buttons -->
+        <div class="btns-wrapper">
+          <input type="color" id="color-input" />
+          <div class="btnA-wrapper">
+            <button id="create-btn">Create Grid</button>
+            <button id="clear-btn">Clear Grid</button>
+          </div>
+          <div class="btnB-wrapper">
+            <button id="erase-btn">Erase</button>
+            <button id="paint-btn">Paint</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Actual Grid Diplay -->
+      <section class="grid-container"></section>
+      <button id="screenshot-btn">Save Screenshot</button>
+    </main>
+    <div>
+      <h1 class="title">Pixel Art Generator</h1>
+    </div>
+    <!-- Javascript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

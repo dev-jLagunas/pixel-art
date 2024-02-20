@@ -57,6 +57,14 @@ window.addEventListener("DOMContentLoaded", () => {
   gridWidthInput.value = 0;
 });
 
+gridContainer.addEventListener(
+  "touchmove",
+  function (event) {
+    event.preventDefault();
+  },
+  { passive: false }
+);
+
 createGridBtn.addEventListener("click", createGrid);
 
 clearGridBtn.addEventListener("click", () => {
